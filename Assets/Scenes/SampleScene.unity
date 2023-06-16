@@ -611,6 +611,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 499946846980354601, guid: ec0782e4f8591a242b5ddb55190fd0c4, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: cb81b51d01629804eaed134efbe27668, type: 2}
+    - target: {fileID: 3094873640571418422, guid: ec0782e4f8591a242b5ddb55190fd0c4, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3094873640571418422, guid: ec0782e4f8591a242b5ddb55190fd0c4, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3094873640571418422, guid: ec0782e4f8591a242b5ddb55190fd0c4, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3094873640571418422, guid: ec0782e4f8591a242b5ddb55190fd0c4, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3436644701435913620, guid: ec0782e4f8591a242b5ddb55190fd0c4, type: 3}
       propertyPath: m_Name
       value: Enemy
@@ -618,6 +638,18 @@ PrefabInstance:
     - target: {fileID: 4312672328386362607, guid: ec0782e4f8591a242b5ddb55190fd0c4, type: 3}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4312672328386362607, guid: ec0782e4f8591a242b5ddb55190fd0c4, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4312672328386362607, guid: ec0782e4f8591a242b5ddb55190fd0c4, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4312672328386362607, guid: ec0782e4f8591a242b5ddb55190fd0c4, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4312672328386362607, guid: ec0782e4f8591a242b5ddb55190fd0c4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -657,6 +689,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4312672328386362607, guid: ec0782e4f8591a242b5ddb55190fd0c4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159615790322452069, guid: ec0782e4f8591a242b5ddb55190fd0c4, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159615790322452069, guid: ec0782e4f8591a242b5ddb55190fd0c4, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159615790322452069, guid: ec0782e4f8591a242b5ddb55190fd0c4, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159615790322452069, guid: ec0782e4f8591a242b5ddb55190fd0c4, type: 3}
+      propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -771,26 +819,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3134705203884766357, guid: 796edbaeeb4d29641b868bb246e2a1d1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7849416934865209746, guid: 796edbaeeb4d29641b868bb246e2a1d1, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.19999999
-      objectReference: {fileID: 0}
-    - target: {fileID: 7849416934865209746, guid: 796edbaeeb4d29641b868bb246e2a1d1, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.19999999
-      objectReference: {fileID: 0}
-    - target: {fileID: 7849416934865209746, guid: 796edbaeeb4d29641b868bb246e2a1d1, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.19999999
-      objectReference: {fileID: 0}
-    - target: {fileID: 7935751033146385392, guid: 796edbaeeb4d29641b868bb246e2a1d1, type: 3}
-      propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7936231684330714822, guid: 796edbaeeb4d29641b868bb246e2a1d1, type: 3}
-      propertyPath: InitialModule.startSpeed.scalar
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
