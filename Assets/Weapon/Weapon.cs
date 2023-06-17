@@ -11,6 +11,10 @@ public class Weapon : MonoBehaviour
 
     [SerializeField] ParticleSystem muzzleFlash;
     [SerializeField] GameObject hitEffect;
+    [SerializeField] Ammunition ammoSystem;
+    [SerializeField] AmmunitionType ammoType;
+    [SerializeField] float timeBetweenShots;
+    bool canShoot = true;
 
     GameObject vfxParent;
 
@@ -26,13 +30,17 @@ public class Weapon : MonoBehaviour
 
     private void HandleFire()
     {
-        if (Input.GetButtonDown("Fire1")) {
-            Shoot();
+        if (Input.GetMouseButton(0)) {
+            if (ammoSystem.GetAmount(ammoType) > 0 && canShoot) {
+                 StartCoroutine("Shoot");
+            }
         }
     }
 
-    private void Shoot()
+    private IEnumerator Shoot()
     {
+        canShoot = false;
+        ammoSystem.Consume(ammoType);
         muzzleFlash.Play();
         RaycastHit hit;
         if (Physics.Raycast(FPCamera.transform.position, FPCamera.transform.forward, out hit, range)) {
@@ -43,7 +51,8 @@ public class Weapon : MonoBehaviour
                 target.TakeDamage(damage);
             }
         }
-        
+        yield return new WaitForSeconds(timeBetweenShots);
+        canShoot = true;
     }
 
     private void CreateHitImpactVfx(RaycastHit hit)

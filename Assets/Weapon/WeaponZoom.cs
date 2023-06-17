@@ -6,18 +6,17 @@ using StarterAssets;
 public class WeaponZoom : MonoBehaviour
 {
     [SerializeField] Camera mainCamera;
+    [SerializeField] FirstPersonController fpsController;
 
     [SerializeField] float zoomInFov = 10f;
     [SerializeField] float zoomOutFov = 40f;
-    [SerializeField] float zoomMouseModifier = 0.5f;
-
-    FirstPersonController fpsController;
-
+    [SerializeField] float zoomInMouseSpeed = 0.5f;
+    [SerializeField] float zoomOutMouseSpeed = 0.5f;
 
     bool isZoomed = false;
 
-    private void Start() {
-        fpsController = GetComponent<FirstPersonController>();
+    private void OnDisable(){
+        ZoomOut();
     }
 
     private void Update() {
@@ -28,12 +27,25 @@ public class WeaponZoom : MonoBehaviour
 
     void HandleZoomToggle() {
         isZoomed = !isZoomed;
-        if (isZoomed) {
-            mainCamera.fieldOfView = zoomInFov;
-            fpsController.RotationSpeed = fpsController.RotationSpeed * zoomMouseModifier;
-        } else {
-            mainCamera.fieldOfView = zoomOutFov;
-            fpsController.RotationSpeed = fpsController.RotationSpeed / zoomMouseModifier;
+        if (isZoomed)
+        {
+            ZoomIn();
         }
+        else
+        {
+            ZoomOut();
+        }
+    }
+
+    private void ZoomOut()
+    {
+        mainCamera.fieldOfView = zoomOutFov;
+        fpsController.RotationSpeed = zoomOutMouseSpeed;
+    }
+
+    private void ZoomIn()
+    {
+        mainCamera.fieldOfView = zoomInFov;
+        fpsController.RotationSpeed = zoomInMouseSpeed;
     }
 }
