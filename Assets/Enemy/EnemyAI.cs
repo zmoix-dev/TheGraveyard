@@ -25,6 +25,7 @@ public class EnemyAI : MonoBehaviour
     void Update()
     {
         HandleShouldEngage();
+        HandleEngage();
     }
 
     void OnDrawGizmosSelected() {
@@ -35,11 +36,11 @@ public class EnemyAI : MonoBehaviour
     private void HandleShouldEngage(){
         if (IsTargetInRange(aggroRadius)) {
             isEngaged = true;
-            HandleEngage();
-        } else {
-            isEngaged = false;
-            HandleReset();
-        }
+        } 
+        // else {
+        //     isEngaged = false;
+        //     HandleReset();
+        // }
     }
 
     private bool IsTargetInRange(float range) {
@@ -95,6 +96,10 @@ public class EnemyAI : MonoBehaviour
         Vector3 direction = (target.position - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * turnSpeed);
+    }
 
+    public void OnDamageTaken() {
+        Debug.Log("Ouch, that hurt!");
+        isEngaged = true;
     }
 }

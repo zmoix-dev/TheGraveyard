@@ -7,12 +7,6 @@ public class EnemyAttack : MonoBehaviour
     [SerializeField] GameObject target;
     [SerializeField] float damage = 20f;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     public void AttackHitEvent() {
         if (target == null) {
             return;
