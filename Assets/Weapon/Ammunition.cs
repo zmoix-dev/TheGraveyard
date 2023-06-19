@@ -19,4 +19,8 @@ public class Ammunition : MonoBehaviour
     public void Consume(AmmunitionType type) {
         slots[(int)type].amount--;
     }
+
+    public void Increase(AmmunitionType type, int amount) {
+        slots[(int)type].amount += amount;
+    }
 }

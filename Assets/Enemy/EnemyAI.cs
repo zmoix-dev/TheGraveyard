@@ -4,9 +4,9 @@ using UnityEngine.AI;
 
 public class EnemyAI : MonoBehaviour
 {
-    [SerializeField] Transform target;
     [SerializeField] float aggroRadius = 10f;
     [SerializeField] float turnSpeed = 5f;
+    Transform target;
     NavMeshAgent navMeshAgent;
     Vector3 spawnPosition;
     bool isEngaged;
@@ -37,10 +37,6 @@ public class EnemyAI : MonoBehaviour
         if (IsTargetInRange(aggroRadius)) {
             isEngaged = true;
         } 
-        // else {
-        //     isEngaged = false;
-        //     HandleReset();
-        // }
     }
 
     private bool IsTargetInRange(float range) {
@@ -57,7 +53,7 @@ public class EnemyAI : MonoBehaviour
                 HandleStopAttack();
             }
         } else {
-            HandleReset();
+            //HandleReset();
         }
     }
 
