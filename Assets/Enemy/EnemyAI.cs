@@ -95,7 +95,6 @@ public class EnemyAI : MonoBehaviour
     }
 
     public void OnDamageTaken() {
-        Debug.Log("Ouch, that hurt!");
         isEngaged = true;
     }
 }

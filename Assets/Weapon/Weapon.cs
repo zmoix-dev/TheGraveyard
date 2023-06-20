@@ -42,9 +42,8 @@ public class Weapon : MonoBehaviour
         canShoot = false;
         ammoSystem.Consume(ammoType);
         muzzleFlash.Play();
-        RaycastHit hit;
+        RaycastHit hit; 
         if (Physics.Raycast(FPCamera.transform.position, FPCamera.transform.forward, out hit, range)) {
-            Debug.Log($"Hit this: {hit.transform.name}");
             CreateHitImpactVfx(hit);
             EnemyHealth target = hit.transform.GetComponent<EnemyHealth>();
             if (target != null) {

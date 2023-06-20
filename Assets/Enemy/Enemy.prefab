@@ -52,11 +52,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aggroRadius: 10
   turnSpeed: 5
-  target: {fileID: 0}
-  navMeshAgent: {fileID: 0}
-  spawnPosition: {x: 0, y: 0, z: 0}
-  isEngaged: 0
-  attackRange: 2.5
 --- !u!195 &6362805863019967923
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -126,7 +121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  damage: 20
+  damage: 12
 --- !u!136 &4483161774934837811
 CapsuleCollider:
   m_ObjectHideFlags: 0
