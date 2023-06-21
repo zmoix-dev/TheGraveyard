@@ -50,7 +50,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8698579a8922f443afa9eb8fab8fb68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aggroRadius: 10
+  aggroRadius: 16
   turnSpeed: 5
 --- !u!195 &6362805863019967923
 NavMeshAgent:
