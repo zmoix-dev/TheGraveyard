@@ -10,7 +10,7 @@ public class EnemyAI : MonoBehaviour
     NavMeshAgent navMeshAgent;
     Vector3 spawnPosition;
     bool isEngaged;
-    float attackRange = 2.5f;
+    [SerializeField] float attackRange = 2.5f;
 
 
     // Start is called before the first frame update
