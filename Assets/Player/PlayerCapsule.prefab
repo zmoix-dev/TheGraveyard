@@ -178,6 +178,7 @@ GameObject:
   - component: {fileID: 640623644}
   - component: {fileID: 7792787244300518398}
   - component: {fileID: 513926294891235192}
+  - component: {fileID: 3111607672814241243}
   m_Layer: 8
   m_Name: PlayerCapsule
   m_TagString: Player
@@ -395,6 +396,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 100
+  damageTakenCanvas: {fileID: 0}
+  fadeTime: 0.5
+  healthDisplayCanvas: {fileID: 0}
 --- !u!114 &1659372764678857440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -540,6 +544,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3111607672814241243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2363093938978352687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a06b393892c5f458db883f4a3a9611, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7943644264248579956
 GameObject:
   m_ObjectHideFlags: 0

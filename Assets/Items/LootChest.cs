@@ -20,11 +20,13 @@ public class LootChest : MonoBehaviour
     GameObject player;
     Ammunition ammunitionSystem;
     Flashlight flashlight;
+    Inventory inventory;
 
     void Start() {
         player = GameObject.FindWithTag("Player");    
         ammunitionSystem = player.GetComponent<Ammunition>();
         flashlight = player.GetComponentInChildren<Flashlight>();
+        inventory = player.GetComponent<Inventory>();
     }
 
     // Update is called once per frame
@@ -50,7 +52,9 @@ public class LootChest : MonoBehaviour
             ammunitionSystem.Increase(AmmunitionType.Medium, medAmmo);
             ammunitionSystem.Increase(AmmunitionType.Large, largeAmmo);
             flashlight.RechargeBattery(rechargePct);
-
+            if (isKeyChest) {
+                inventory.AddKey();
+            }
             Destroy(gameObject);
         }
     }

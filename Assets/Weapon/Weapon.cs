@@ -20,8 +20,29 @@ public class Weapon : MonoBehaviour
 
     GameObject vfxParent;
 
+    [SerializeField] float lastEnabledAt = -1f;
+
     void Start() {
         vfxParent = GameObject.FindWithTag("VfxParent");
+    }
+
+    void OnEnable() {
+         if (lastEnabledAt != -1) {
+            if (Time.time - lastEnabledAt > timeBetweenShots) {
+                canShoot = true;
+            } else {
+                StartCoroutine(WaitForShootOnSwap());
+            }
+        }
+    }
+
+    private IEnumerator WaitForShootOnSwap() {
+       yield return new WaitForSeconds(timeBetweenShots - (lastEnabledAt - Time.time));
+       canShoot = true;
+    }
+
+    void OnDisable() {
+        lastEnabledAt = Time.time;
     }
 
     // Update is called once per frame
@@ -41,7 +62,7 @@ public class Weapon : MonoBehaviour
     {
         if (Input.GetMouseButton(0)) {
             if (ammoSystem.GetAmount(ammoType) > 0 && canShoot) {
-                 StartCoroutine("Shoot");
+                 StartCoroutine(Shoot());
             }
         }
     }
