@@ -16,17 +16,20 @@ public class LootChest : MonoBehaviour
     [SerializeField] float lootableRange = 5f;
     [SerializeField] GameObject lootText;
     [SerializeField] bool isKeyChest = false;
+
     bool isLooted = false;
     GameObject player;
     Ammunition ammunitionSystem;
     Flashlight flashlight;
     Inventory inventory;
+    LootManager lootManager;
 
     void Start() {
         player = GameObject.FindWithTag("Player");    
         ammunitionSystem = player.GetComponent<Ammunition>();
         flashlight = player.GetComponentInChildren<Flashlight>();
         inventory = player.GetComponent<Inventory>();
+        lootManager = FindObjectOfType<LootManager>();
     }
 
     // Update is called once per frame
@@ -55,6 +58,7 @@ public class LootChest : MonoBehaviour
             if (isKeyChest) {
                 inventory.AddKey();
             }
+            lootManager.DisplayLoot(medAmmo, largeAmmo, rechargePct, isKeyChest);
             Destroy(gameObject);
         }
     }
