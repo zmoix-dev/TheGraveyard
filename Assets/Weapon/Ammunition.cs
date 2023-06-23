@@ -22,5 +22,6 @@ public class Ammunition : MonoBehaviour
 
     public void Increase(AmmunitionType type, int amount) {
         slots[(int)type].amount += amount;
+        Debug.Log($"Added {amount} to {type.ToString()}");
     }
 }

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Weapon : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] Ammunition ammoSystem;
     [SerializeField] AmmunitionType ammoType;
     [SerializeField] float timeBetweenShots;
+    [SerializeField] TextMeshProUGUI ammoText;
     bool canShoot = true;
 
     GameObject vfxParent;
@@ -25,7 +27,14 @@ public class Weapon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        DisplayAmmo();
         HandleFire();
+    }
+
+    private void DisplayAmmo()
+    {
+        int currentAmmo = ammoSystem.GetAmount(ammoType);
+        ammoText.text = currentAmmo.ToString();
     }
 
     private void HandleFire()
