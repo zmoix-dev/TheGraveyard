@@ -16,10 +16,12 @@ public class Gate : MonoBehaviour
     [SerializeField] GameObject keysText;
     GameObject player;
     Inventory inventory;
+    ObjectivesManager objectivesManager;
 
     void Start() {
         player = GameObject.FindWithTag("Player");
         inventory = player.GetComponent<Inventory>();
+        objectivesManager = FindObjectOfType<ObjectivesManager>();
         ShowInteractText(false);
         ShowKeysText(false);
     }
@@ -57,11 +59,13 @@ public class Gate : MonoBehaviour
             string message = $"Requires {remainingKeys} more {(remainingKeys == 1 ? "key" : "keys")} to open.";
             keysText.GetComponent<TextMeshPro>().text = message;
             ShowKeysText(true);
+            objectivesManager.AddObjective(Objectives.gate);
             return;
         }
         rightGate.transform.Rotate(new Vector3(0, 1.3f, 0), 55);
         leftGate.transform.Rotate(new Vector3(0, -1.3f, 0), 55f);   
         ShowInteractText(false);
         ShowKeysText(false);
+        objectivesManager.CompleteObjective(Objectives.gate);
     }
 }
