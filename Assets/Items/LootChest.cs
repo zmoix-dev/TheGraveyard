@@ -61,6 +61,8 @@ public class LootChest : MonoBehaviour
                 inventory.AddKey();
             }
             lootManager.DisplayLoot(medAmmo, largeAmmo, rechargePct, isKeyChest);
+            gameObject.GetComponent<MeshRenderer>().enabled = false;
+            lootText.SetActive(false);
             if (sfx && !sfx.isPlaying) {
                 sfx.Play();
             }
