@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class EnemyAttack : MonoBehaviour
 {
-    [SerializeField] PlayerHealth target;
     [SerializeField] float damage = 20f;
+    [SerializeField] AudioSource hitPlayerSfx;
+    PlayerHealth target;
 
     void Start() {
         target = FindObjectOfType<PlayerHealth>();
@@ -16,6 +17,9 @@ public class EnemyAttack : MonoBehaviour
             return;
         } else {
             target.takeDamage(damage, DamageType.PHYSICAL);
+            if (hitPlayerSfx && !hitPlayerSfx.isPlaying) {
+                hitPlayerSfx.Play();
+            }
         }
     }
 }
