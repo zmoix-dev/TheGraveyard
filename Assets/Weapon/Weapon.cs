@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class Weapon : MonoBehaviour
 {
@@ -16,11 +17,10 @@ public class Weapon : MonoBehaviour
     [SerializeField] AmmunitionType ammoType;
     [SerializeField] float timeBetweenShots;
     [SerializeField] TextMeshProUGUI ammoText;
-    bool canShoot = true;
-
-    GameObject vfxParent;
-
+    [SerializeField] Image image;
     [SerializeField] float lastEnabledAt = -1f;
+    bool canShoot = true;
+    GameObject vfxParent;
 
     void Start() {
         vfxParent = GameObject.FindWithTag("VfxParent");
@@ -89,5 +89,9 @@ public class Weapon : MonoBehaviour
         GameObject futureDestroy = Instantiate(hitEffect, hit.point, Quaternion.LookRotation(hit.normal));
         futureDestroy.transform.parent = vfxParent.transform;
         Destroy(futureDestroy, 1f);
+    }
+
+    public Image GetImage() {
+        return image;
     }
 }
