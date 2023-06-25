@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9c0aea4d02acc3c4bbece019e244c546
+guid: 44a9cdbf7287af44095324f9e65511c7
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,8 +9,9 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Exo Space
-  fallbackFontReferences: []
+  - Horror Brush
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 7353dba195a66b74aa2bcefa36117645, type: 3}
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1

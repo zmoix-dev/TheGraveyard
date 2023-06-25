@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 86e948ebef004b84eb16d902657203ec
+guid: 7353dba195a66b74aa2bcefa36117645
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Spacesuit
+  - Horror Brush
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
