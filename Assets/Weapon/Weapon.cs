@@ -91,7 +91,9 @@ public class Weapon : MonoBehaviour
         Destroy(futureDestroy, 1f);
     }
 
-    public Image GetImage() {
-        return image;
+    public void SetImageAlpha(float alpha) {
+        Color c = image.color;
+        c.a = alpha;
+        image.color = c;
     }
 }

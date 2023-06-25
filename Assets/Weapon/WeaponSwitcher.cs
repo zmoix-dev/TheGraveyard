@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class WeaponSwitcher : MonoBehaviour
 {
     [SerializeField] int currentWeapon = 0;
+    [SerializeField] Weapon[] weapons;
 
     private void Start() {
         SetWeaponActive();
@@ -24,14 +25,14 @@ public class WeaponSwitcher : MonoBehaviour
     private void ProcessScrollWheelInput()
     {
         if (Input.GetAxis("Mouse ScrollWheel") > 0) {
-            if (currentWeapon >= transform.childCount - 1) {
+            if (currentWeapon >= weapons.Length - 1) {
                 currentWeapon = 0;
             } else {
                 currentWeapon++;
             }
         } else if (Input.GetAxis("Mouse ScrollWheel") < 0 ){
             if (currentWeapon <= 0) {
-                currentWeapon = transform.childCount - 1;
+                currentWeapon = weapons.Length - 1;
             } else {
                 currentWeapon--;
             }
@@ -49,14 +50,14 @@ public class WeaponSwitcher : MonoBehaviour
 
     private void SetWeaponActive()
     {
-        for (int i = 0; i < transform.childCount; i++) {
-            Transform weapon = transform.GetChild(i);
+        for (int i = 0; i < weapons.Length; i++) {
             if (i == currentWeapon) {
-                weapon.gameObject.SetActive(true);
+                weapons[i].transform.gameObject.SetActive(true);
+                weapons[i].SetImageAlpha(1f);
             } else {
-                weapon.gameObject.SetActive(false);
+                weapons[i].transform.gameObject.SetActive(false);
+                weapons[i].SetImageAlpha(0.5f);
             }
-            
         }
     }
 }
