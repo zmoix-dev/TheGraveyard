@@ -89,7 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e9a5dbe4b9551c4982683a8e3fa36e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHitPoints: 100
+  maxHitPoints: 300
 --- !u!114 &5366947562242340193
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -280,7 +280,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 5afeea07202dabd46b1a6bcf55350188, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.25
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -437,7 +437,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 19800000, guid: 064f2a43a4735e243ac17004f2044564, type: 3}
       propertyPath: lengthInSec
-      value: 0.98
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 19800000, guid: 064f2a43a4735e243ac17004f2044564, type: 3}
       propertyPath: playOnAwake
@@ -457,7 +457,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 19800000, guid: 064f2a43a4735e243ac17004f2044564, type: 3}
       propertyPath: InitialModule.maxNumParticles
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 19800000, guid: 064f2a43a4735e243ac17004f2044564, type: 3}
       propertyPath: InitialModule.startSize.scalar

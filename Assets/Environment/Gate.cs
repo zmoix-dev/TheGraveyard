@@ -70,5 +70,7 @@ public class Gate : MonoBehaviour
         ShowKeysText(false);
         AudioSource.PlayClipAtPoint(gateSfx.clip, transform.position);
         objectivesManager.CompleteObjective(Objectives.gate);
+        objectivesManager.CompleteObjective(Objectives.crypt);
+        objectivesManager.AddObjective(Objectives.ritual);
     }
 }
