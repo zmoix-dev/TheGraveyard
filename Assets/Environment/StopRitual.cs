@@ -12,9 +12,8 @@ public class StopRitual : MonoBehaviour
     [SerializeField] float portalFadeDuration = 2.0f;
     [SerializeField] Canvas victoryCanvas;
     [SerializeField] TextMeshPro closeText;
-    [SerializeField] FirstPersonController playerInputController;
-    
     Transform player;
+    FirstPersonController playerInputController;
 
     void Start() {
         player = FindObjectOfType<PlayerHealth>().transform;
