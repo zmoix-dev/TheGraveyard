@@ -102,7 +102,7 @@ public class Weapon : MonoBehaviour
     private void HandleShootSfx(bool isShooting) {
         if (isShooting && !shootSfx.isPlaying) {
             shootSfx.Play();
-        } else if (!isShooting && shootSfx.isPlaying) {
+        } else if (!isShooting && shootSfx.isPlaying && shootSfx.loop == true) {
             shootSfx.Stop();
         }
     }

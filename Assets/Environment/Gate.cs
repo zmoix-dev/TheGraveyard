@@ -17,6 +17,7 @@ public class Gate : MonoBehaviour
     GameObject player;
     Inventory inventory;
     ObjectivesManager objectivesManager;
+    AudioSource gateSfx;
 
     void Start() {
         player = GameObject.FindWithTag("Player");
@@ -24,6 +25,7 @@ public class Gate : MonoBehaviour
         objectivesManager = FindObjectOfType<ObjectivesManager>();
         ShowInteractText(false);
         ShowKeysText(false);
+        gateSfx = GetComponent<AudioSource>();
     }
 
     void Update() {
@@ -66,6 +68,7 @@ public class Gate : MonoBehaviour
         leftGate.transform.Rotate(new Vector3(0, -1.3f, 0), 55f);   
         ShowInteractText(false);
         ShowKeysText(false);
+        AudioSource.PlayClipAtPoint(gateSfx.clip, transform.position);
         objectivesManager.CompleteObjective(Objectives.gate);
     }
 }

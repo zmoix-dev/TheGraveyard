@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyParticleAttack : MonoBehaviour
 {
     [SerializeField] ParticleSystem particles;
+    [SerializeField] AudioSource sfx;
     EnemyHealth health;
 
     void Start() {
@@ -16,6 +17,9 @@ public class EnemyParticleAttack : MonoBehaviour
             return;
         } else {
             particles.Play();
+            if (sfx && !sfx.isPlaying) {
+                sfx.Play();
+            }
         }
     }
 }

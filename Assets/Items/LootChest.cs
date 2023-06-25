@@ -23,8 +23,10 @@ public class LootChest : MonoBehaviour
     Flashlight flashlight;
     Inventory inventory;
     LootManager lootManager;
+    AudioSource sfx;
 
     void Start() {
+        sfx = GetComponent<AudioSource>();
         player = GameObject.FindWithTag("Player");    
         ammunitionSystem = player.GetComponent<Ammunition>();
         flashlight = player.GetComponentInChildren<Flashlight>();
@@ -39,13 +41,13 @@ public class LootChest : MonoBehaviour
         }
         if (Vector3.Distance(transform.position, player.transform.position) < lootableRange) {
             lootText.SetActive(true);
-            HandlePickup();
+            StartCoroutine(HandlePickup());
         } else {
             lootText.SetActive(false);
         }
     }
 
-    private void HandlePickup()
+    private IEnumerator HandlePickup()
     {
         if (Input.GetKeyDown(KeyCode.E)) {
             isLooted = true;
@@ -59,6 +61,12 @@ public class LootChest : MonoBehaviour
                 inventory.AddKey();
             }
             lootManager.DisplayLoot(medAmmo, largeAmmo, rechargePct, isKeyChest);
+            if (sfx && !sfx.isPlaying) {
+                sfx.Play();
+            }
+            while(sfx.isPlaying) {
+                yield return new WaitForEndOfFrame();
+            }
             Destroy(gameObject);
         }
     }
