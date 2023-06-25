@@ -19,9 +19,11 @@ public class Weapon : MonoBehaviour
     [SerializeField] TextMeshProUGUI ammoText;
     [SerializeField] Image image;
     [SerializeField] float lastEnabledAt = -1f;
+    [SerializeField] AudioSource shootSfx;
+    [SerializeField] AudioSource clickSfx;
     bool canShoot = true;
     GameObject vfxParent;
-
+    
     void Start() {
         vfxParent = GameObject.FindWithTag("VfxParent");
     }
@@ -63,7 +65,12 @@ public class Weapon : MonoBehaviour
         if (Input.GetMouseButton(0)) {
             if (ammoSystem.GetAmount(ammoType) > 0 && canShoot) {
                  StartCoroutine(Shoot());
+            } else if (ammoSystem.GetAmount(ammoType) <= 0) {
+                HandleShootSfx(false);
+                HandleClickSfx();
             }
+        } else {
+            HandleShootSfx(false);
         }
     }
 
@@ -72,6 +79,7 @@ public class Weapon : MonoBehaviour
         canShoot = false;
         ammoSystem.Consume(ammoType);
         muzzleFlash.Play();
+        HandleShootSfx(true);
         RaycastHit hit; 
         if (Physics.Raycast(FPCamera.transform.position, FPCamera.transform.forward, out hit, range)) {
             CreateHitImpactVfx(hit);
@@ -89,6 +97,20 @@ public class Weapon : MonoBehaviour
         GameObject futureDestroy = Instantiate(hitEffect, hit.point, Quaternion.LookRotation(hit.normal));
         futureDestroy.transform.parent = vfxParent.transform;
         Destroy(futureDestroy, 1f);
+    }
+
+    private void HandleShootSfx(bool isShooting) {
+        if (isShooting && !shootSfx.isPlaying) {
+            shootSfx.Play();
+        } else if (!isShooting && shootSfx.isPlaying) {
+            shootSfx.Stop();
+        }
+    }
+    private void HandleClickSfx()
+    {
+        if (clickSfx && !clickSfx.isPlaying) {
+            clickSfx.Play();
+        }
     }
 
     public void SetImageAlpha(float alpha) {

@@ -55,17 +55,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Blaster
       objectReference: {fileID: 0}
-    - target: {fileID: 8918101807453192764, guid: 201d3d057116eb64b9a6edd96163d6c0, type: 3}
-      propertyPath: range
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 8918101807453192764, guid: 201d3d057116eb64b9a6edd96163d6c0, type: 3}
-      propertyPath: ammoType
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8918101807453192764, guid: 201d3d057116eb64b9a6edd96163d6c0, type: 3}
-      propertyPath: timeBetweenShots
-      value: 1.5
+    - target: {fileID: 2404669637083562531, guid: 201d3d057116eb64b9a6edd96163d6c0, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 201d3d057116eb64b9a6edd96163d6c0, type: 3}

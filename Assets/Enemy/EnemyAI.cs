@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -6,11 +7,12 @@ public class EnemyAI : MonoBehaviour
 {
     [SerializeField] float aggroRadius = 10f;
     [SerializeField] float turnSpeed = 5f;
+    [SerializeField] float attackRange = 2.5f;
+    AudioSource engageSfx;
     Transform target;
     NavMeshAgent navMeshAgent;
     Vector3 spawnPosition;
     bool isEngaged;
-    [SerializeField] float attackRange = 2.5f;
 
 
     // Start is called before the first frame update
@@ -19,6 +21,7 @@ public class EnemyAI : MonoBehaviour
         navMeshAgent = GetComponent<NavMeshAgent>();
         target = GameObject.FindWithTag("Player").transform;
         spawnPosition = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+        engageSfx = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -67,10 +70,25 @@ public class EnemyAI : MonoBehaviour
     }
 
 
-    private void HandleChase() {
+    private void HandleChase()
+    {
         GetComponent<Animator>().SetTrigger("Move");
         navMeshAgent.stoppingDistance = attackRange;
         navMeshAgent.SetDestination(target.position);
+        StartCoroutine(PlayEngageSfx());
+    }
+
+    private IEnumerator PlayEngageSfx()
+    {
+        // play once on engage
+        if (engageSfx && engageSfx.enabled == true && !engageSfx.isPlaying)
+        {
+            engageSfx.Play();
+        }
+        while (engageSfx.isPlaying) {
+            yield return new WaitForEndOfFrame();
+        }
+        engageSfx.enabled = false;
     }
 
     private void HandleReset() {
