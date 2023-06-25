@@ -44,7 +44,9 @@ public class Weapon : MonoBehaviour
     }
 
     void OnDisable() {
-        lastEnabledAt = Time.time;
+        if (!canShoot) {
+            lastEnabledAt = Time.time;
+        }
     }
 
     // Update is called once per frame
