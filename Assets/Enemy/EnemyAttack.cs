@@ -15,7 +15,7 @@ public class EnemyAttack : MonoBehaviour
         if (target == null) {
             return;
         } else {
-            target.takeDamage(damage);
+            target.takeDamage(damage, DamageType.PHYSICAL);
         }
     }
 }

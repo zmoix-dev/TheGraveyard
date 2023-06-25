@@ -8,6 +8,7 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] float maxHitPoints = 100f;
     float currentHitPoints;
     bool isDead = false;
+    public bool IsDead { get { return isDead; }}
 
     void Start() {
         currentHitPoints = maxHitPoints;

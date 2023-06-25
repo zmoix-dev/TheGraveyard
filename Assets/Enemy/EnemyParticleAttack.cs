@@ -5,13 +5,14 @@ using UnityEngine;
 public class EnemyParticleAttack : MonoBehaviour
 {
     [SerializeField] ParticleSystem particles;
+    EnemyHealth health;
 
-    float t;
+    void Start() {
+        health = GetComponent<EnemyHealth>();
+    }
+
     public void CreateAttackParticles() {
-        t = Time.time;
-        Debug.Log($"Particles! {t}");
-
-        if (particles == null) {
+        if (health.IsDead || particles == null) {
             return;
         } else {
             particles.Play();
