@@ -341,7 +341,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Press E to loot.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 025d624230ef90049b061256a2339d93, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 0741e0e9ce844fd43a1ae5fa877896c2, type: 2}
   m_sharedMaterial: {fileID: 3762138486138602061, guid: 025d624230ef90049b061256a2339d93, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -408,6 +408,6 @@ MonoBehaviour:
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_renderer: {fileID: 8117392515206148531}
   m_maskType: 0

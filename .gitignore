@@ -8,4 +8,4 @@
 Assembly-CSharp.csproj
 /.vscode/*
 /Assets/ThirdParty/
-/Builds
+/Builds/*
