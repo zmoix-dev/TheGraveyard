@@ -244,7 +244,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aggroRadius: 10
   turnSpeed: 5
-  attackRange: 2.5
+  attackRange: 3.5
 --- !u!195 &2122626376
 NavMeshAgent:
   m_ObjectHideFlags: 0
