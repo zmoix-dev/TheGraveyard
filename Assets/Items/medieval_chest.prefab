@@ -274,7 +274,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0.323, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 6.239, y: -1.086}
+  m_AnchoredPosition: {x: 6.191, y: -1.086}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &8117392515206148531
@@ -297,7 +297,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 3762138486138602061, guid: 025d624230ef90049b061256a2339d93, type: 2}
+  - {fileID: 37074162732721699, guid: 0741e0e9ce844fd43a1ae5fa877896c2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -342,7 +342,7 @@ MonoBehaviour:
   m_text: Press E to loot.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0741e0e9ce844fd43a1ae5fa877896c2, type: 2}
-  m_sharedMaterial: {fileID: 3762138486138602061, guid: 025d624230ef90049b061256a2339d93, type: 2}
+  m_sharedMaterial: {fileID: 37074162732721699, guid: 0741e0e9ce844fd43a1ae5fa877896c2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -402,7 +402,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 18.72491, w: 4.73246}
+  m_margin: {x: 0, y: 0, z: 18.587763, w: 4.73246}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
